@@ -1,0 +1,278 @@
+:root {
+  --Very-Dark-Blue: hsl(230, 29%, 20%);
+  --Dark-Grayish-Blue: hsl(230, 11%, 40%);
+  --Grayish-Blue: hsl(231, 7%, 65%);
+  --Light-Grayish-Blue: hsl(207, 33%, 95%);
+  --main-red: hsl(0, 100%, 68%);
+}
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+body {
+  font-family: "Barlow Condensed", sans-serif;
+}
+body::before {
+  content: "";
+  width: 50%;
+  height: 50%;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: -1;
+  background-color: var(--Light-Grayish-Blue);
+  border-bottom-left-radius: 50px;
+}
+
+.container {
+  margin: 0 0 0 150px;
+}
+/* Start Navbar content */
+nav .container {
+  margin: 40px 150px 40px 150px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+nav .navBtnOpen {
+  display: none;
+}
+nav .navBtnClose {
+  display: none;
+}
+nav .navlist {
+  display: flex;
+  gap: 40px;
+  z-index: 100000;
+}
+nav .navlist li {
+  list-style: none;
+  text-transform: uppercase;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
+}
+nav .navlist li.login {
+  margin-left: 40px;
+  color: var(--Grayish-Blue);
+  position: relative;
+}
+nav .navlist li.login::before {
+  content: "";
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  background-color: var(--Grayish-Blue);
+  left: 2.5px;
+  top: 50%;
+  transform: translateX(-40px) translateY(-50%);
+  -webkit-transform: translateX(-40px) translateY(-50%);
+  -moz-transform: translateX(-40px) translateY(-50%);
+  -ms-transform: translateX(-40px) translateY(-50%);
+  -o-transform: translateX(-40px) translateY(-50%);
+}
+nav .navlist li:hover {
+  text-decoration: underline;
+}
+/* screen size for mobile */
+@media (max-width: 375px) {
+  .container {
+    margin: 0 30px 0 30px;
+  }
+  nav .container {
+    position: relative;
+    margin: 40px 30px 40px 30px;
+    display: flex;
+  }
+  nav .container .logo img {
+    width: 24px;
+  }
+  nav .container .navlist {
+    display: none;
+  }
+  nav .container .navlist.active {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    position: absolute;
+    left: 50%;
+    top: 67px;
+    width: 100%;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    background-color: white;
+    padding: 25px;
+    box-shadow: 0 0 10px 0 #00000060;
+    text-align: center;
+  }
+  nav .navlist li.login {
+    margin-top: 15px;
+    margin-left: 0;
+  }
+  nav .container .navBtnOpen {
+    display: block;
+  }
+  nav .container .navBtnOpen.hidden {
+    display: none;
+  }
+  nav .container .navBtnClose {
+    display: block;
+  }
+  nav .container .navBtnClose.hidden {
+    display: none;
+  }
+  nav .navlist li.login::before {
+    width: 100%;
+    height: 1px;
+    border-radius: unset;
+    left: 0;
+    top: -0.5px;
+    transform: translateY(-15px);
+    -webkit-transform: translateY(-15px);
+    -moz-transform: translateY(-15px);
+    -ms-transform: translateY(-15px);
+    -o-transform: translateY(-15px);
+    -webkit-border-radius: unset;
+    -moz-border-radius: unset;
+    -ms-border-radius: unset;
+    -o-border-radius: unset;
+  }
+}
+
+/* End Navbar content */
+/* start content section */
+.content .container {
+  padding: 70px 0 0 0;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  overflow: hidden;
+}
+.content .container .image {
+  width: 60%;
+}
+.content .container .image img {
+  width: 130%;
+  transform: translateX(48px);
+  -webkit-transform: translateX(48px);
+  -moz-transform: translateX(48px);
+  -ms-transform: translateX(48px);
+  -o-transform: translateX(48px);
+}
+.content .container .text {
+  width: 40%;
+}
+.content .container .text p.new {
+  text-transform: uppercase;
+  color: var(--Grayish-Blue);
+  letter-spacing: 4px;
+}
+.content .container .text p.new > span {
+  font-weight: 700;
+  padding: 4px 8px;
+  border-radius: 15px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
+  background-color: var(--Very-Dark-Blue);
+  color: white;
+  margin-right: 10px;
+  letter-spacing: 1px;
+}
+.content .container .text h1 {
+  font-size: 60px;
+  text-transform: uppercase;
+  margin-top: 10px;
+}
+.content .container .text p.info {
+  padding-top: 30px;
+  font-size: 18px;
+  font-family: "Barlow", sans-serif;
+  color: var(--Dark-Grayish-Blue);
+}
+.content .container .text .btns {
+  padding-top: 30px;
+}
+.content .container .text .btns .btn {
+  padding: 15px 30px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  background-color: var(--main-red);
+  color: white;
+  font-weight: 700;
+  font-size: 18px;
+  text-transform: uppercase;
+  margin-right: 25px;
+  letter-spacing: 1px;
+}
+.content .container .text .btns .link {
+  text-transform: uppercase;
+  font-size: 18px;
+  letter-spacing: 3px;
+  color: var(--Dark-Grayish-Blue);
+}
+/* set screen mobile */
+@media (max-width: 375px) {
+  .content .container {
+    padding: unset;
+    margin: 0 0 0 30px;
+    flex-direction: column;
+    gap: 100px;
+  }
+  .content .container .image {
+    width: 100%;
+  }
+  .content .container .image img {
+    width: 140%;
+    transform: translateX(-20px);
+    -webkit-transform: translateX(-20px);
+    -moz-transform: translateX(-20px);
+    -ms-transform: translateX(-20px);
+    -o-transform: translateX(-20px);
+  }
+  .content .container .text {
+    width: 100%;
+    padding: 0 30px 0 0;
+  }
+  .content .container .text h1 {
+    font-size: 40px;
+    margin-top: 15px;
+  }
+  .content .container .text .btns {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px;
+    
+  }
+  .content .container .text .btns .texth {
+    display: none;
+  }
+  .content .container .text .btns .btn {
+    font-size: 16px;
+    font-weight: 400;
+    margin: 0;
+    padding: 10px 20px;
+  }
+  .content .container .text .btns .link {
+    font-size: 15px;
+  }
+}
+/* end content section */
